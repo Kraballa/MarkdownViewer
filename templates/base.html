@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale-1.5">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="content">
+            markdown viewer | <a href="/index.md">index</a> | <a href="https://gist.github.com/Kraballa/8ce6dea5341793e2be54623cf3db7326">code</a>
+        </div>
+    </div>
+    <div class="content">{{content}}</div>
+</body>
+
+</html>

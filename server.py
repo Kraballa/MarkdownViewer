@@ -43,10 +43,7 @@ def index():
 def read(subpath=""):
     subpath = "./text/" + subpath
     if subpath.endswith(".md"):
-        if os.path.exists(subpath):
-            text = readFile(subpath)
-        else:
-            text = not_found
+        text = readFile(subpath)
     else:
         if os.path.exists(subpath):
             return send_file(subpath)
@@ -56,6 +53,8 @@ def read(subpath=""):
     return render_template("base.html", content=text, title="MarkdownViewer")
 
 def readFile(path):
+    if not os.path.exists(path):
+        return not_found
     with open(path, "r", encoding="utf-8") as file:
         text = file.read()
     return Markup(md.render(text))

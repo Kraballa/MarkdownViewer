@@ -9,6 +9,8 @@ MarkdownViewer uses python. It requires the following packages:
 - latex2mathml (renders tex amsmath to HTML5 MathML)
 install them using pip like any other package.
 
+Put all your markdown in a folder called `text` and link to it from `index.md`. Don't include `text` in the markdown link. `(/page.md)` reads file `text/page.md`, only `(/index.md)` goes to `./index.md`.
+
 ## Markdown Features
 MarkdownViewer uses the sane CommonMark-based `markdown-it-py` package and therefore follows that standart. Additionally things such as hard linebreaks, tables, strikethrough and html inside md are allowed. The server also uses the footnote, frontmatter and deflist plugins. Ontop of that I've added some custom extensions:
 
